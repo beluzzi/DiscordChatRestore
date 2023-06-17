@@ -6,7 +6,7 @@ import json
 
 directory = 'chats'
 discord = Discord(
-    url="https://discord.com/api/webhooks/1119621890483425391/LW3tKHzXXXAvHsZeDbO7wbHQyPeJ7X3sCLkgZPyX3ICU3tT6HFtSnHWnJOz02LRSo2No")
+    url="https://discord.com/api/webhooks/1119642697590898729/URF0uiDm5VZc_dEt_S_1A8rUt2A8MS2OH33JoISR2opSVuhNkqZIW8GLqRYlX7mE_FGq")
 
 
 def restore(file):
@@ -18,9 +18,11 @@ def restore(file):
         time.sleep(1.5)
         if bool(i["mentions"]):
             msg = str(i["content"])
-            nname = i["mentions"][0]["nickname"]
-            id = i["mentions"][0]["id"]
-            msg = msg.replace("@"+nname,"<@"+id+">")
+            x = (len(i["mentions"]))
+            for y in range(x):
+                nname = i["mentions"][y]["nickname"]
+                uid = i["mentions"][y]["id"]
+                msg = msg.replace("@" + nname, "<@" + uid + ">")
             discord.post(
                 content=msg,
                 username=i["author"]["nickname"],
@@ -48,4 +50,4 @@ def restore(file):
 
 
 if __name__ == '__main__':
-    restore("chats/💎 El Sharqi 💎 - Text Channels - general [744641638076514369].json")
+    restore("test.json")
