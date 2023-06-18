@@ -6,9 +6,7 @@ import json
 
 directory = 'chats'
 discord = Discord(
-    url="https://discord.com/api/webhooks/1119642697590898729/URF0uiDm5VZc_dEt_S_1A8rUt2A8MS2OH33JoISR2opSVuhNkqZIW8GLqRYlX7mE_FGq")
-
-
+    url="")
 def restore(file):
     f = open(file, encoding='utf-8')
     data = json.load(f)
@@ -43,11 +41,11 @@ def restore(file):
         counter += 1
         wait += 1
         if (wait % 100) == 0:
-            time.sleep(60)
+            time.sleep(5)
         print(str(round(counter / len(data['messages']), 5) * 100) + " % done sending (" + str(
             counter) + ") messages sent " + "time left ~: " + str(datetime.timedelta(
-            seconds=(len(data['messages']) - counter) * 1.5 + ((len(data['messages']) - counter) // 100) * 60)))
+            seconds=(len(data['messages']) - counter) * 1.5 + ((len(data['messages']) - counter) // 100) * 5)))
 
 
 if __name__ == '__main__':
-    restore("test.json")
+    restore("chats/file")
