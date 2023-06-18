@@ -1,6 +1,5 @@
 import time
 import datetime
-import discordwebhook
 
 from discordwebhook import Discord
 import json
