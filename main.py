@@ -6,7 +6,7 @@ import json
 
 directory = 'chats'
 discord = Discord(
-    url="https://discord.com/api/webhooks/1119982778214256804/zgIbMI3-7L0yTKf115LKbntXew74saDSUpuM_XVia_JQfHjlUyhRaCTeP5dOowjjmbtq")
+    url="")
 
 
 def restore(file):
@@ -52,4 +52,4 @@ def restore(file):
 
 
 if __name__ == '__main__':
-    restore("chats/💎 El Sharqi 💎 - Voice Channels - general [1024362942302539867].json")
+    restore("chats/")
